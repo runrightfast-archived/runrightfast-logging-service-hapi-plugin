@@ -23,11 +23,12 @@ module.exports = function(grunt) {
 				src : [ 'lib/*.js', 'test/*.js' ],
 				directives : {
 					node : true,
-					todo : true,
-					white : true,
-					vars : true,
+					passfail : false,
 					nomen : true,
-					plusplus: true,
+					plusplus : true,
+					todo : true,
+					vars : true,
+					white : true,
 					predef : [ 'describe', 'it' ]
 				},
 				options : {
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
 			coverage : {
 				options : {
 					reporter : 'html-cov',
-					output : "out/coverage.html"					
+					output : "out/coverage.html"
 				}
 			},
 			test : {
