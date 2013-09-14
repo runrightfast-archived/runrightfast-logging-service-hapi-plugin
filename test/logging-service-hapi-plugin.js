@@ -126,6 +126,34 @@ describe("LoggingService Hapi Plugin", function() {
 				});
 			});
 		});
+		
+		it("- a single event with event.ts specified can be POSTed to /log", function(done) {
+			var server = new Hapi.Server();
+
+			var loggingServiceOptions = {};
+
+			server.pack.require('../', loggingServiceOptions, function(err) {
+				expect(err).to.not.exist;
+
+				var event = {
+					tags : [ 'info' ],
+					data : 'test message',
+					ts : new Date()						
+				};
+
+				server.inject({
+					method : 'POST',
+					url : '/log',
+					payload : JSON.stringify(event),
+					headers : {
+						'Content-Type' : 'application/json'
+					}
+				}, function(res) {
+					expect(res.statusCode).to.equal(202);
+					done();
+				});
+			});
+		});
 
 		it("- an array of events can be POSTed to /log", function(done) {
 			var server = new Hapi.Server();
