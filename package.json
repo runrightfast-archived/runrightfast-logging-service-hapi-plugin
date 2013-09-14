@@ -10,7 +10,8 @@
 	"scripts":{
 		"blanket":{
 			"pattern":[
-				"lib"
+				"lib/handlers.js",
+				"lib/logging-service-hapi-plugin.js"
 			]	
 		}
 	},
