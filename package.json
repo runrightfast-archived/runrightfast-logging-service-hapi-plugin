@@ -21,7 +21,7 @@
 		"hapi":"1.11.1",
 		"lodash":"2.0.0",
 		"hoek":"1.0.3",
-		"runrightfast-logging-service":"git://github.com/runrightfast/runrightfast-logging-service.git#0.0.7"
+		"runrightfast-logging-service":"git://github.com/runrightfast/runrightfast-logging-service.git#0.0.8"
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",
