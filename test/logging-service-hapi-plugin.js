@@ -59,7 +59,8 @@ describe("LoggingService Hapi Plugin", function() {
 		var server = new Hapi.Server();
 
 		var options = {
-			loggingService : require('runrightfast-logging-service')()
+			loggingService : require('runrightfast-logging-service')(),
+			logLevel : 'DEBUG'
 		};
 
 		options.loggingService.log({
@@ -126,7 +127,7 @@ describe("LoggingService Hapi Plugin", function() {
 				});
 			});
 		});
-		
+
 		it("- a single event with event.ts specified can be POSTed to /log", function(done) {
 			var server = new Hapi.Server();
 
@@ -138,7 +139,7 @@ describe("LoggingService Hapi Plugin", function() {
 				var event = {
 					tags : [ 'info' ],
 					data : 'test message',
-					ts : new Date()						
+					ts : new Date()
 				};
 
 				server.inject({
