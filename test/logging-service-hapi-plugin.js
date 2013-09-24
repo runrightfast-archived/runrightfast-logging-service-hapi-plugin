@@ -100,8 +100,8 @@ describe("LoggingService Hapi Plugin", function() {
 		});
 	});
 
-	describe("registers a REST API at /log by default", function() {
-		it("- a single event can be POSTed to /log", function(done) {
+	describe("registers a REST API at /api/runrightfast-logging-service/log by default", function() {
+		it("- a single event can be POSTed", function(done) {
 			var server = new Hapi.Server();
 
 			var loggingServiceOptions = {};
@@ -116,7 +116,7 @@ describe("LoggingService Hapi Plugin", function() {
 
 				server.inject({
 					method : 'POST',
-					url : '/log',
+					url : '/api/runrightfast-logging-service/log',
 					payload : JSON.stringify(event),
 					headers : {
 						'Content-Type' : 'application/json'
@@ -128,7 +128,7 @@ describe("LoggingService Hapi Plugin", function() {
 			});
 		});
 
-		it("- a single event with event.ts specified can be POSTed to /log", function(done) {
+		it("- a single event with event.ts specified can be POSTed", function(done) {
 			var server = new Hapi.Server();
 
 			var loggingServiceOptions = {};
@@ -144,7 +144,7 @@ describe("LoggingService Hapi Plugin", function() {
 
 				server.inject({
 					method : 'POST',
-					url : '/log',
+					url : '/api/runrightfast-logging-service/log',
 					payload : JSON.stringify(event),
 					headers : {
 						'Content-Type' : 'application/json'
@@ -156,7 +156,7 @@ describe("LoggingService Hapi Plugin", function() {
 			});
 		});
 
-		it("- an array of events can be POSTed to /log", function(done) {
+		it("- an array of events can be POSTed", function(done) {
 			var server = new Hapi.Server();
 
 			var loggingServiceOptions = {};
@@ -174,7 +174,7 @@ describe("LoggingService Hapi Plugin", function() {
 
 				server.inject({
 					method : 'POST',
-					url : '/log',
+					url : '/api/runrightfast-logging-service/log',
 					payload : JSON.stringify(events),
 					headers : {
 						'Content-Type' : 'application/json'
@@ -200,7 +200,7 @@ describe("LoggingService Hapi Plugin", function() {
 
 				server.inject({
 					method : 'POST',
-					url : '/log',
+					url : '/api/runrightfast-logging-service/log',
 					payload : JSON.stringify(event),
 					headers : {
 						'Content-Type' : 'application/json'
@@ -236,7 +236,7 @@ describe("LoggingService Hapi Plugin", function() {
 
 				server.inject({
 					method : 'POST',
-					url : '/log',
+					url : '/api/runrightfast-logging-service/log',
 					payload : JSON.stringify(events),
 					headers : {
 						'Content-Type' : 'application/json'
