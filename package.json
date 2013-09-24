@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-logging-service-hapi-plugin",
-	"version":"0.0.10",
+	"version":"0.0.14",
 	"description":"RunRightFast Logging Service Hapi Plugin",
 	"repository":{
 		"type":"git",
@@ -22,7 +22,7 @@
 		"lodash":"2.0.x",
 		"hoek":"1.0.x",
 		"runrightfast-logging-service":"git://github.com/runrightfast/runrightfast-logging-service.git#0.0.12",
-		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.4",
+		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.7",
 		"log4js":"0.6.x"
 	},
 	"devDependencies":{
