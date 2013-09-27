@@ -11,7 +11,8 @@
 		"blanket":{
 			"pattern":[
 				"lib/handlers.js",
-				"lib/logging-service-hapi-plugin.js"
+				"lib/hapi-plugin.js",
+				"lib/index.js"
 			]	
 		}
 	},
