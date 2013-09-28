@@ -1,7 +1,7 @@
 {
 	"name":"runrightfast-logging-service-hapi-plugin",
 	"version":"0.0.15",
-	"description":"RunRightFast Logging Service Hapi Plugin",
+	"description":"RunRightFast Logging Service Proxy Hapi Plugin",
 	"repository":{
 		"type":"git",
 		"url":"https://github.com/runrightfast/runrightfast-logging-service-hapi-plugin.git"
@@ -11,8 +11,7 @@
 		"blanket":{
 			"pattern":[
 				"lib/handlers.js",
-				"lib/hapi-plugin.js",
-				"lib/index.js"
+				"lib/hapi-plugin.js"
 			]	
 		}
 	},
