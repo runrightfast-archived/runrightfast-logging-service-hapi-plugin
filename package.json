@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-logging-service-hapi-plugin",
-	"version":"0.0.19",
+	"version":"0.0.20",
 	"description":"RunRightFast Logging Service Proxy Hapi Plugin",
 	"repository":{
 		"type":"git",
@@ -19,10 +19,11 @@
 	"license":"Apache v2",
 	"dependencies":{		
 		"lodash":"2.2.x",
-		"hoek":"1.1.x",
 		"runrightfast-logging-service":"git://github.com/runrightfast/runrightfast-logging-service.git#0.0.16",
-		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.11",
-		"log4js":"0.6.x"
+		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.15",
+		"log4js":"0.6.x",
+		"joi":"1.2.x",
+		"extend":"1.2.x"
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",
@@ -33,7 +34,7 @@
 		"sinon-chai":"~2.4.0",
 		"grunt-mocha-cov":"~0.0.7",
 		"grunt-contrib-clean":"~0.5.0",
-		"hapi":"1.13.x"
+		"hapi":"1.14.x"
 	},
 	"peerDependencies":{
 		"hapi":">=1.9.7"

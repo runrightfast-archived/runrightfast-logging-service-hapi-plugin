@@ -74,6 +74,49 @@ describe("LoggingService Hapi Plugin", function() {
 		});
 	});
 
+	it("can be plugged into a Hapi pack with options containing a loggingServiceFactory", function(done) {
+		var server = new Hapi.Server();
+
+		var options = {
+			loggingServiceFactory : function() {
+				return require('runrightfast-logging-service')();
+			},
+			logLevel : 'DEBUG'
+		};
+
+		options.loggingServiceFactory().log({
+			tags : [ 'info' ],
+			data : 'loggingServiceFactory type is : ' + (typeof options.loggingServiceFactory)
+		});
+
+		server.pack.require('../', options, function(err) {
+			expect(err).to.not.exist;
+			done();
+		});
+	});
+
+	it("requires a valid LoggingService implementation", function(done) {
+		var server = new Hapi.Server();
+
+		var options = {
+			loggingServiceFactory : function() {
+				return {};
+			},
+			logLevel : 'DEBUG'
+		};
+
+		try {
+			server.pack.require('../', options, function(err) {
+				console.log('server.pack.require error: ' + error);
+				expect(err).to.exist;
+			});
+			done(new Error('Expected plugin to fail to load with an Error'));
+		} catch (error) {
+			console.log(error);
+			done();
+		}
+	});
+
 	it("can be plugged into a Hapi pack with options into a specific server selected by label ", function(done) {
 		var server = new Hapi.Server({
 			labels : [ 'web' ]
